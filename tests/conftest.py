@@ -10,6 +10,6 @@ def configfile(request):
     return request.config.getoption("--config")
 
 
-#@pytest.fixture(scope='session', autouse=True)
-#def uuptest_init_config(configfile):
-#    print(f'Init config: {configfile}')
+@pytest.fixture(scope='session', autouse=True)
+def init_config(configfile):
+    print(f'Init config: {configfile}')
